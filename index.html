@@ -103,7 +103,7 @@
 
     h1 {
       font-size: clamp(2.8rem, 7vw, 5.7rem);
-      line-height: 0.95;
+      line-height: 1;
       max-width: 10ch;
       margin-bottom: 20px;
     }
@@ -112,7 +112,7 @@
       font-size: clamp(2rem, 4vw, 3.35rem);
       line-height: 1.02;
       margin-bottom: 18px;
-      max-width: 13ch;
+      max-width: 18ch;
     }
 
     .lead {
@@ -278,7 +278,7 @@
     }
 
     .btn-primary:hover {
-      background: var(--accent);
+      background: #4733cc;
     }
 
     .btn-secondary {
@@ -708,6 +708,15 @@
       }
     }
 
+   .contact-title {
+      max-width: 18ch;
+      line-height: 1.05;
+    }
+
+    .purple-text {
+      color: var(--accent);
+   }
+
     .mobile-social-icons {
       display: flex;
       justify-content: center;
@@ -736,7 +745,7 @@
   .mobile-social-icons i {
     font-size: 0.9rem;
   }
-    
+
   </style>
 </head>
 <body>
@@ -755,6 +764,7 @@
           <li><a href="#actions" class="nav-link">Δράσεις & Έρευνα</a></li>
           <li><a href="#news" class="nav-link">Νέα</a></li>
           <li><a href="#contact" class="nav-link">Επικοινωνία</a></li>
+	  <li><a href="#collaboration" class="nav-link">Συνεργασία</a></li>
       <div class="social-icons">
         <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
           <i class="fa-brands fa-facebook-f"></i>
@@ -786,6 +796,7 @@
           <li><a href="#actions" class="nav-link">Δράσεις & Έρευνα</a></li>
           <li><a href="#news" class="nav-link">Νέα</a></li>
           <li><a href="#contact" class="nav-link">Επικοινωνία</a></li>
+	  <li><a href="#collaboration" class="nav-link">Συνεργασία</a></li>
         </ul>
         
         <div class="mobile-social-icons">
@@ -804,21 +815,18 @@
       <div class="container hero-grid">
         <div class="hero-copy reveal">
           <div class="eyebrow">Ενημέρωση • Στήριξη • Ορατότητα</div>
-          <h1>Μαζί δίνουμε ορατότητα στη σκλήρυνση κατά πλάκας.</h1>
+           <h1>Η φωνή των ατόμων με <span class="purple-text">Πολλαπλή Σκλήρυνση</span></h1>
           <p class="lead">
-            Ένα σύγχρονο, καθαρό και ανθρώπινο ψηφιακό περιβάλλον για την ΠΟΑμΣΚΠ — με στόχο την ενημέρωση, την ενδυνάμωση και την ευαισθητοποίηση του κοινού.
+            Εκπροσωπούμε, ενημερώνουμε, εκπαιδεύουμε και διεκδικούμε για την ποιότητα ζωής των ασθενών σε ολόκληρη την Ελλάδα.
           </p>
-          <div class="btn-group">
-            <a href="#about" class="btn btn-primary">Μάθε περισσότερα</a>
-            <a href="#news" class="btn btn-secondary">Δες τα νέα</a>
-          </div>
-          <div class="hero-meta">
-            <span class="pill">Καθαρή αισθητική</span>
-            <span class="pill">Προσβάσιμη ανάγνωση</span>
-            <span class="pill">Έτοιμο για φωτογραφίες & βίντεο</span>
-          </div>
-        </div>
 
+ 
+<div class="btn-group">
+  <a href="education.html" class="btn btn-primary">Τι είναι η ΣΚΠ</a>
+  <a href="about.html" class="btn btn-secondary">Ο ρόλος της ΠΟΑμΣΚΠ</a>
+</div>
+</div>
+        
          <div class="hero-visual reveal" aria-label="Κύριο οπτικό στοιχείο">
            <video autoplay muted loop playsinline poster="assets/images/hero.jpg">
             <source src="assets/videos/hero.video.mp4" type="video/mp4">
@@ -941,7 +949,8 @@
       </div>
     </section>
 
-    <section class="section" id="news">
+
+ <section class="section" id="news">
       <div class="container panel story reveal">
         <img src="assets/images/news.jpg" alt="Εικόνα για ενότητα νέων ή δράσεων" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
         <div class="story-placeholder" style="display:none;">
@@ -967,69 +976,54 @@
     </section>
 
     <section class="section" id="contact">
-      <div class="container">
-        <div class="eyebrow reveal">Επικοινωνία</div>
-        <h2 class="reveal">Χώρος για επαφή, οπτικό υλικό και ενημέρωση.</h2>
-        <p class="section-text reveal">
-          Η τελευταία ενότητα μπορεί να χρησιμοποιηθεί για στοιχεία επικοινωνίας, οπτικό υλικό, σύντομο βίντεο, φόρμα επικοινωνίας ή σύνδεση με δράσεις και καμπάνιες της ΠΟΑμΣΚΠ.
-        </p>
+  <div class="container">
+    <div class="eyebrow reveal">Επικοινωνία</div>
+    <h2 class="reveal contact-title">Είμαστε εδώ για να ακούσουμε και να συνεργαστούμε.</h2>
+    <p class="section-text reveal">
+      Είμαστε εδώ για να ακούσουμε, να ενημερώσουμε και να συμπράξουμε με κάθε ενδιαφερόμενο για τη βελτίωση της ζωής των ατόμων με ΣΚΠ.
+    </p>
 
-        <div class="gallery">
-          <div class="gallery-main">
-            <div class="panel gallery-tile reveal">
-              <img src="assets/images/gallery-main.jpg" alt="Κεντρική φωτογραφία δράσης ή κοινότητας" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-              <div class="gallery-placeholder" style="display:none;">
-                <div>
-                  <p style="font-weight:700; text-transform:uppercase; letter-spacing:.14em; font-size:.8rem; margin-bottom:.7rem; color:#6a5af5;">Κεντρική εικόνα</p>
-                  <p>Μεγάλη φωτογραφία δράσης, συνάντησης ή δημόσιας παρουσίας της Ομοσπονδίας.</p>
-                </div>
-              </div>
-              <div class="tile-caption">Μεγάλη φωτογραφία ή καμπάνια με καθαρό και ανθρώπινο χαρακτήρα.</div>
-            </div>
-          </div>
+    <div class="cards">
+      <article class="card reveal">
+        <span class="card-index">01</span>
+        <h3>Τηλέφωνο</h3>
+        <p><a href="tel:+302101234567">+30 210 1234567</a></p>
+      </article>
 
-          <div class="gallery-side">
-            <div class="panel gallery-tile reveal">
-              <img src="assets/images/gallery-side.jpg" alt="Δευτερεύον οπτικό υλικό ή poster" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-              <div class="gallery-placeholder" style="display:none;">
-                <div>
-                  <p style="font-weight:700; text-transform:uppercase; letter-spacing:.14em; font-size:.8rem; margin-bottom:.7rem; color:#6a5af5;">Visual / αφίσα</p>
-                  <p>Χώρος για αφίσα, infographic ή άλλο ενημερωτικό visual.</p>
-                </div>
-              </div>
-              <div class="tile-caption">Χώρος για αφίσα, infographic ή θεσμικό visual.</div>
-            </div>
+      <article class="card reveal">
+        <span class="card-index">02</span>
+        <h3>Email</h3>
+        <p><a href="mailto:info@poamskp.gr">info@poamskp.gr</a></p>
+      </article>
 
-            <div class="panel gallery-tile reveal">
-              <video controls muted poster="assets/images/video-poster.jpg" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                <source src="assets/videos/hero.mp4" type="video/mp4">
-              </video>
-              <div class="gallery-placeholder" style="display:none;">
-                <div>
-                  <p style="font-weight:700; text-transform:uppercase; letter-spacing:.14em; font-size:.8rem; margin-bottom:.7rem; color:#6a5af5;">Θέση για βίντεο</p>
-                  <p>Ιδανικό για σύντομο βίντεο 8–15 δευτερολέπτων, χωρίς ήχο, με ήρεμη κίνηση.</p>
-                </div>
-              </div>
-              <div class="tile-caption">Σύντομο βίντεο χωρίς ήχο, με καθαρή και ήρεμη αισθητική.</div>
-            </div>
-          </div>
+      <article class="card reveal">
+        <span class="card-index">03</span>
+        <h3>Ψηφιακό Γραφείο</h3>
+        <p>Για προγραμματισμένες συναντήσεις, συνδεθείτε στο δωμάτιο Google Meet.</p>
+        <div class="btn-group" style="margin-top: 18px;">
+          <a href="https://meet.google.com/zsk-rnhd-bck" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            Είσοδος στο Meet
+          </a>
         </div>
-      </div>
-    </section>
+      </article>
+    </div>
+  </div>
+</section>
 
-    <section class="section" style="padding-top: 0;">
-      <div class="container panel cta reveal">
-        <div class="eyebrow" style="justify-content:center; width:100%;">Επικοινωνία • Δράση • Στήριξη</div>
-        <h2>Μαζί κάνουμε τη φωνή πιο δυνατή.</h2>
-        <p>
-          Η τελευταία αυτή ενότητα μπορεί να καταλήγει σε στοιχεία επικοινωνίας, σύνδεση με δράσεις, παραπομπή σε φόρμα επικοινωνίας ή κάλεσμα για συμμετοχή και υποστήριξη.
-        </p>
-        <div class="btn-group" style="justify-content:center;">
-          <a href="mailto:info@example.gr" class="btn btn-primary">Επικοινωνήστε μαζί μας</a>
-          <a href="#home" class="btn btn-secondary">Επιστροφή στην αρχή</a>
-        </div>
-      </div>
-    </section>
+<section class="section" id="collaboration" style="padding-top: 0;">
+  <div class="container panel cta reveal">
+    <div class="eyebrow" style="justify-content:center; width:100%;">Συνεργασίες • Δράση • Στήριξη</div>
+    <h2>Ανοιχτοί σε συνεργασίες με κοινό κοινωνικό σκοπό.</h2>
+    <p>
+      Η ΠΟΑμΣΚΠ επιδιώκει συνεργασίες με φορείς, οργανισμούς, επαγγελματίες υγείας, συλλόγους και πρωτοβουλίες που μοιράζονται το ίδιο όραμα για ενημέρωση, στήριξη και βελτίωση της ζωής των ατόμων με ΣΚΠ.
+    </p>
+    <div class="btn-group" style="justify-content:center;">
+      <a href="mailto:info@poamskp.gr?subject=Συνεργασία" class="btn btn-primary">Εκδήλωση ενδιαφέροντος</a>
+      <a href="#contact" class="btn btn-secondary">Στοιχεία επικοινωνίας</a>
+    </div>
+  </div>
+</section>
+    
   </main>
 
   <footer>
