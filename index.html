@@ -9,6 +9,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+/>
 
   <style>
     :root {
@@ -183,6 +187,41 @@
       background: var(--accent-soft);
       color: var(--accent);
     }
+
+    .nav-contact-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.social-icons a {
+  width: 38px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  color: var(--muted);
+  background: transparent;
+  transition: all 0.2s ease;
+  padding: 0;
+}
+
+.social-icons a:hover,
+.social-icons a:focus-visible {
+  background: rgba(255, 255, 255, 0.8);
+  color: var(--accent);
+}
+
+.social-icons i {
+  font-size: 0.95rem;
+}
 
     .nav-toggle {
       display: none;
@@ -655,6 +694,36 @@
         font-size: 0.88rem;
       }
     }
+
+    .mobile-social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid var(--line);
+    }
+
+  .mobile-social-icons a {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    color: var(--muted);
+    transition: all 0.2s ease;
+  }
+
+  .mobile-social-icons a:hover {
+    background: var(--accent-soft);
+    color: var(--accent);
+  }
+
+  .mobile-social-icons i {
+    font-size: 0.9rem;
+  }
+    
   </style>
 </head>
 <body>
@@ -671,6 +740,24 @@
           <li><a href="#actions" class="nav-link">Δράσεις & Έρευνα</a></li>
           <li><a href="#news" class="nav-link">Νέα</a></li>
           <li><a href="#contact" class="nav-link">Επικοινωνία</a></li>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <i class="fa-brands fa-facebook-f"></i>
+        </a>
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+        <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+        <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+          <i class="fa-brands fa-tiktok"></i>
+        </a>
+      </div>
+    </li>
         </ul>
       </nav>
 
@@ -685,6 +772,14 @@
           <li><a href="#news" class="nav-link">Νέα</a></li>
           <li><a href="#contact" class="nav-link">Επικοινωνία</a></li>
         </ul>
+        
+        <div class="mobile-social-icons">
+          <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://www.youtube.com/" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://www.tiktok.com/" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
       </div>
     </div>
   </header>
