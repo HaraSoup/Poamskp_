@@ -155,6 +155,17 @@
       white-space: nowrap;
     }
 
+    .logo img {
+      height: 40px;
+      width: auto;
+      display: block;
+      transition: transform 0.25s ease;
+    }
+    
+    .logo:hover img {
+      transform: scale(1.05);
+    }
+
     .logo span {
       color: var(--accent);
     }
@@ -730,7 +741,9 @@
 
   <header>
     <div class="container nav">
-      <a href="#home" class="logo">ΠΟΑμΣΚΠ <span>• Ομοσπονδία</span></a>
+      <a href="#home" class="logo">
+        <img src"assets/images/logo.png" alt="ΠΟΑμΣΚΠ Logo">
+      </a>
 
       <nav aria-label="Κύρια πλοήγηση">
         <ul class="nav-links" id="desktopNav">
