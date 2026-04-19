@@ -10,9 +10,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-/>
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
 
   <style>
     :root {
@@ -162,7 +162,7 @@
       display: block;
       transition: transform 0.25s ease;
     }
-    
+
     .logo:hover img {
       transform: scale(1.05);
     }
@@ -202,39 +202,39 @@
     }
 
     .nav-contact-group {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
 
-.social-icons {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
+    .social-icons {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
 
-.social-icons a {
-  width: 38px;
-  height: 38px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 999px;
-  color: var(--muted);
-  background: transparent;
-  transition: all 0.2s ease;
-  padding: 0;
-}
+    .social-icons a {
+      width: 38px;
+      height: 38px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      color: var(--muted);
+      background: transparent;
+      transition: all 0.2s ease;
+      padding: 0;
+    }
 
-.social-icons a:hover,
-.social-icons a:focus-visible {
-  background: rgba(255, 255, 255, 0.8);
-  color: var(--accent);
-}
+    .social-icons a:hover,
+    .social-icons a:focus-visible {
+      background: rgba(255, 255, 255, 0.8);
+      color: var(--accent);
+    }
 
-.social-icons i {
-  font-size: 0.95rem;
-}
+    .social-icons i {
+      font-size: 0.95rem;
+    }
 
     .nav-toggle {
       display: none;
@@ -299,10 +299,6 @@
       align-items: stretch;
     }
 
-    .hero-visual {
-      height: 100%;
-    }
-
     .hero-copy {
       padding: 28px 0 10px;
     }
@@ -330,6 +326,7 @@
       overflow: hidden;
       box-shadow: var(--shadow);
       background: linear-gradient(135deg, #e9e5ff 0%, #efede9 100%);
+      isolation: isolate;
     }
 
     .hero-visual img,
@@ -337,7 +334,42 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      filter: saturate(0.96) contrast(1.02);
+    }
+
+    .hero-visual video {
+      filter: blur(2px) saturate(0.9) brightness(0.74) contrast(1.02);
+      transform: scale(1.05);
+      opacity: 0;
+      animation: heroVideoFade 1.4s ease forwards;
+    }
+
+    .hero-visual::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        linear-gradient(
+          135deg,
+          rgba(246, 243, 239, 0.08) 0%,
+          rgba(63, 47, 163, 0.16) 45%,
+          rgba(246, 243, 239, 0.22) 100%
+        );
+      pointer-events: none;
+    }
+
+    .hero-visual::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(
+        to top,
+        rgba(246, 243, 239, 0.30) 0%,
+        rgba(246, 243, 239, 0.10) 38%,
+        rgba(246, 243, 239, 0.02) 100%
+      );
+      pointer-events: none;
     }
 
     .hero-placeholder,
@@ -356,13 +388,15 @@
     .hero-placeholder {
       position: absolute;
       inset: 0;
+      z-index: 0;
     }
 
     .hero-card {
       position: absolute;
       left: 22px;
       bottom: 22px;
-      max-width: 320px;
+      z-index: 2;
+      max-width: 360px;
       padding: 18px;
       border-radius: 20px;
       background: rgba(255, 255, 255, 0.86);
@@ -568,6 +602,112 @@
       backdrop-filter: blur(8px);
     }
 
+    .education-layout {
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .education-sidebar {
+      position: relative;
+    }
+
+    .education-sidebar-card {
+      position: sticky;
+      top: 118px;
+      padding: 28px;
+      border-radius: var(--radius-xl);
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid rgba(255, 255, 255, 0.45);
+      backdrop-filter: blur(16px);
+      box-shadow: var(--shadow);
+    }
+
+    .education-title {
+      font-size: clamp(1.8rem, 3vw, 2.7rem);
+      line-height: 1.02;
+      margin-bottom: 16px;
+      max-width: 12ch;
+    }
+
+    .education-intro {
+      color: var(--muted);
+      font-size: 1rem;
+      margin-bottom: 24px;
+    }
+
+    .education-tabs {
+      display: grid;
+      gap: 10px;
+    }
+
+    .education-tab {
+      width: 100%;
+      text-align: left;
+      padding: 16px 18px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.64);
+      color: var(--text);
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.22s ease;
+    }
+
+    .education-tab:hover,
+    .education-tab:focus-visible {
+      background: rgba(255, 255, 255, 0.92);
+      border-color: rgba(63, 47, 163, 0.18);
+      transform: translateY(-1px);
+      outline: none;
+    }
+
+    .education-tab.active {
+      background: var(--accent-soft);
+      color: var(--accent);
+      border-color: rgba(63, 47, 163, 0.18);
+      box-shadow: inset 0 0 0 1px rgba(63, 47, 163, 0.05);
+    }
+
+    .education-content {
+      padding: 38px;
+      min-height: 520px;
+    }
+
+    .education-panel {
+      display: none;
+    }
+
+    .education-panel.active {
+      display: block;
+      animation: educationFade 0.35s ease;
+    }
+
+    .education-panel h3 {
+      font-size: clamp(1.7rem, 3vw, 2.5rem);
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+
+    .education-panel p {
+      color: var(--muted);
+      font-size: 1.03rem;
+      margin-bottom: 16px;
+      max-width: 65ch;
+    }
+
+    .education-note {
+      margin-top: 24px;
+      padding: 18px 20px;
+      border-radius: 18px;
+      background: rgba(63, 47, 163, 0.06);
+      border: 1px solid rgba(63, 47, 163, 0.12);
+      color: var(--text);
+      font-weight: 600;
+      max-width: 62ch;
+    }
+
     .cta {
       padding: 50px 28px;
       text-align: center;
@@ -603,6 +743,66 @@
       transform: translateY(0);
     }
 
+    .contact-title {
+      max-width: 18ch;
+      line-height: 1.05;
+    }
+
+    .purple-text {
+      color: var(--accent);
+    }
+
+    .mobile-social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid var(--line);
+    }
+
+    .mobile-social-icons a {
+      width: 38px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      color: var(--muted);
+      transition: all 0.2s ease;
+    }
+
+    .mobile-social-icons a:hover {
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+
+    .mobile-social-icons i {
+      font-size: 0.9rem;
+    }
+
+    @keyframes heroVideoFade {
+      from {
+        opacity: 0;
+        transform: scale(1.08);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1.05);
+      }
+    }
+
+    @keyframes educationFade {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     @media (max-width: 1100px) {
       .nav-links a {
         font-size: 0.9rem;
@@ -615,7 +815,8 @@
       .split,
       .story,
       .gallery,
-      .cards {
+      .cards,
+      .education-layout {
         grid-template-columns: 1fr;
       }
 
@@ -678,6 +879,15 @@
         background: var(--accent-soft);
         color: var(--accent);
       }
+
+      .education-sidebar-card {
+        position: static;
+      }
+
+      .education-content {
+        min-height: auto;
+        padding: 28px;
+      }
     }
 
     @media (max-width: 760px) {
@@ -707,45 +917,6 @@
         font-size: 0.88rem;
       }
     }
-
-   .contact-title {
-      max-width: 18ch;
-      line-height: 1.05;
-    }
-
-    .purple-text {
-      color: var(--accent);
-   }
-
-    .mobile-social-icons {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-top: 14px;
-      padding-top: 12px;
-      border-top: 1px solid var(--line);
-    }
-
-  .mobile-social-icons a {
-    width: 38px;
-    height: 38px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 999px;
-    color: var(--muted);
-    transition: all 0.2s ease;
-  }
-
-  .mobile-social-icons a:hover {
-    background: var(--accent-soft);
-    color: var(--accent);
-  }
-
-  .mobile-social-icons i {
-    font-size: 0.9rem;
-  }
-
   </style>
 </head>
 <body>
@@ -764,25 +935,24 @@
           <li><a href="#actions" class="nav-link">Δράσεις & Έρευνα</a></li>
           <li><a href="#news" class="nav-link">Νέα</a></li>
           <li><a href="#contact" class="nav-link">Επικοινωνία</a></li>
-	  <li><a href="#collaboration" class="nav-link">Συνεργασία</a></li>
-      <div class="social-icons">
-        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-          <i class="fa-brands fa-facebook-f"></i>
-        </a>
-        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-          <i class="fa-brands fa-instagram"></i>
-        </a>
-        <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-          <i class="fa-brands fa-linkedin-in"></i>
-        </a>
-        <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-          <i class="fa-brands fa-youtube"></i>
-        </a>
-        <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-          <i class="fa-brands fa-tiktok"></i>
-        </a>
-      </div>
-    </li>
+          <li><a href="#collaboration" class="nav-link">Συνεργασία</a></li>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+            <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+              <i class="fa-brands fa-tiktok"></i>
+            </a>
+          </div>
         </ul>
       </nav>
 
@@ -796,9 +966,9 @@
           <li><a href="#actions" class="nav-link">Δράσεις & Έρευνα</a></li>
           <li><a href="#news" class="nav-link">Νέα</a></li>
           <li><a href="#contact" class="nav-link">Επικοινωνία</a></li>
-	  <li><a href="#collaboration" class="nav-link">Συνεργασία</a></li>
+          <li><a href="#collaboration" class="nav-link">Συνεργασία</a></li>
         </ul>
-        
+
         <div class="mobile-social-icons">
           <a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
           <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
@@ -815,39 +985,37 @@
       <div class="container hero-grid">
         <div class="hero-copy reveal">
           <div class="eyebrow">Ενημέρωση • Στήριξη • Ορατότητα</div>
-	<p><class="lead">Πανελλήνια Ομοσπονδία Ατόμων με Σκλήρυνση κατά Πλάκας (ΠΟΑμΣΚΠ)</p>
-           <h1>Η φωνή των ατόμων με <span class="purple-text">Πολλαπλή Σκλήρυνση</span></h1>
+          <p class="lead">Πανελλήνια Ομοσπονδία Ατόμων με Σκλήρυνση κατά Πλάκας (ΠΟΑμΣΚΠ)</p>
+          <h1>Η φωνή των ατόμων με <span class="purple-text">Πολλαπλή Σκλήρυνση</span></h1>
           <p class="lead">
             Εκπροσωπούμε, ενημερώνουμε, εκπαιδεύουμε και διεκδικούμε για την ποιότητα ζωής των ασθενών σε ολόκληρη την Ελλάδα.
           </p>
 
-
- 		<div class="btn-group">
- 			<a href="#education" class="btn btn-primary">Τι είναι η ΣΚΠ</a>
-  			<a href="#about" class="btn btn-secondary">Ο ρόλος της ΠΟΑμΣΚΠ</a>
-		</div>
-	</div>	
-			
-       
-         <div class="hero-visual reveal" aria-label="Κύριο οπτικό στοιχείο">
-           <video autoplay muted loop playsinline poster="assets/images/hero.jpg">
-            <source src="assets/videos/hero.video.mp4" type="video/mp4">
-          </video>
-
-        <div class="hero-placeholder" style="display:none;">
-          <div>
-            <p style="font-weight:700; text-transform:uppercase; letter-spacing:.14em; font-size:.8rem; margin-bottom:.7rem; color:#6a5af5;">Θέση για βίντεο</p>
-            <p style="max-width:28ch;">Σύντομο βίντεο με ήρεμη αισθητική, όπως πικραλίδα ή seeds floating.</p>
+          <div class="btn-group">
+            <a href="#education" class="btn btn-primary">Τι είναι η ΣΚΠ</a>
+            <a href="#about" class="btn btn-secondary">Ο ρόλος της ΠΟΑμΣΚΠ</a>
           </div>
         </div>
 
-        <div class="hero-card">
-         <strong>Ακόμη και ο άνεμος μεταφέρει ελπίδα!</strong>
-          <p>Ενώνουμε τις φωνές μας και δημιουργούμε καλύτερες συνθήκες ζωής για τα άτομα με ΣΚΠ.</p>
+        <div class="hero-visual reveal" aria-label="Κύριο οπτικό στοιχείο">
+          <video autoplay muted loop playsinline poster="assets/images/hero.jpg">
+            <source src="assets/videos/hero.video.mp4" type="video/mp4">
+          </video>
+
+          <div class="hero-placeholder" style="display:none;">
+            <div>
+              <p style="font-weight:700; text-transform:uppercase; letter-spacing:.14em; font-size:.8rem; margin-bottom:.7rem; color:#6a5af5;">Θέση για βίντεο</p>
+              <p style="max-width:28ch;">Σύντομο βίντεο με ήρεμη αισθητική, όπως πικραλίδα ή seeds floating.</p>
+            </div>
+          </div>
+
+          <div class="hero-card">
+            <strong>Ακόμη και ο άνεμος μεταφέρει ελπίδα</strong>
+            <p>Ενώνουμε φωνές και δημιουργούμε καλύτερες συνθήκες ζωής για τα άτομα με ΣΚΠ.</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
     <section class="section" id="about">
       <div class="container split">
@@ -886,35 +1054,118 @@
     </section>
 
     <section class="section" id="education">
-      <div class="container split">
-        <div class="panel copy reveal">
-          <div class="eyebrow">Εκπαίδευση</div>
-          <h2>Γνώση και ενημέρωση με καθαρό και προσβάσιμο τρόπο.</h2>
-          <p class="section-text">
-            Η εκπαιδευτική ενότητα μπορεί να περιλαμβάνει βασικές πληροφορίες για τη σκλήρυνση κατά πλάκας, ενημερωτικό υλικό, οδηγούς και περιεχόμενο προσανατολισμένο στις πραγματικές ανάγκες των επισκεπτών.
-          </p>
-          <div class="facts">
-            <div class="fact">
-              <strong>Τι είναι η ΣΚΠ</strong>
-              <span>Απλή και σαφής παρουσίαση της νόσου χωρίς περιττή πολυπλοκότητα.</span>
-            </div>
-            <div class="fact">
-              <strong>Κατανόηση συμπτωμάτων</strong>
-              <span>Επεξήγηση ορατών και αόρατων προκλήσεων με σεβασμό και ακρίβεια.</span>
-            </div>
-            <div class="fact">
-              <strong>Πρακτική πληροφόρηση</strong>
-              <span>Χρήσιμο υλικό για άτομα με ΣΚΠ, οικογένειες και φροντιστές.</span>
+      <div class="container education-layout">
+        <div class="education-sidebar reveal" role="tablist" aria-label="Θεματικές ενότητες εκπαίδευσης">
+          <div class="education-sidebar-card">
+            <div class="eyebrow">Εκπαίδευση</div>
+            <h2 class="education-title">Εκπαίδευση & Ενημέρωση</h2>
+            <p class="education-intro">
+              Έγκυρη και κατανοητή πληροφόρηση για τη Σκλήρυνση κατά Πλάκας, οργανωμένη σε βασικές θεματικές ενότητες.
+            </p>
+
+            <div class="education-tabs">
+              <button
+                id="edu-tab-1"
+                class="education-tab active"
+                type="button"
+                role="tab"
+                aria-selected="true"
+                aria-controls="edu-panel-1"
+                onclick="switchEducationTab(1)"
+              >
+                Τι είναι η ΣΚΠ;
+              </button>
+
+              <button
+                id="edu-tab-2"
+                class="education-tab"
+                type="button"
+                role="tab"
+                aria-selected="false"
+                aria-controls="edu-panel-2"
+                onclick="switchEducationTab(2)"
+              >
+                Συμπτώματα & Διάγνωση
+              </button>
+
+              <button
+                id="edu-tab-3"
+                class="education-tab"
+                type="button"
+                role="tab"
+                aria-selected="false"
+                aria-controls="edu-panel-3"
+                onclick="switchEducationTab(3)"
+              >
+                Θεραπευτική προσέγγιση
+              </button>
+
+              <button
+                id="edu-tab-4"
+                class="education-tab"
+                type="button"
+                role="tab"
+                aria-selected="false"
+                aria-controls="edu-panel-4"
+                onclick="switchEducationTab(4)"
+              >
+                Καθημερινότητα & Υποστήριξη
+              </button>
             </div>
           </div>
         </div>
 
-        <div class="panel media reveal">
-          <img src="assets/images/education.jpg" alt="Εικόνα εκπαιδευτικού περιεχομένου" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-          <div class="media-placeholder" style="display:none;">
-            <div>
-              <p style="font-weight:700; text-transform:uppercase; letter-spacing:.14em; font-size:.8rem; margin-bottom:.7rem; color:#6a5af5;">Θέση για εκπαιδευτική εικόνα</p>
-              <p>Βάλε εικόνα από ενημερωτικό υλικό, webinar, εκδήλωση ή visual με καθαρό θεσμικό χαρακτήρα.</p>
+        <div class="education-content panel reveal">
+          <div id="edu-panel-1" class="education-panel active" role="tabpanel" aria-labelledby="edu-tab-1">
+            <h3>Τι είναι η ΣΚΠ;</h3>
+            <p>
+              Η Σκλήρυνση κατά Πλάκας είναι μια χρόνια νευρολογική πάθηση που επηρεάζει το Κεντρικό Νευρικό Σύστημα.
+              Πρόκειται για μια κατάσταση κατά την οποία το ανοσοποιητικό σύστημα επιτίθεται στη μυελίνη, δηλαδή στο προστατευτικό περίβλημα των νευρικών ινών.
+            </p>
+            <p>
+              Η βλάβη αυτή μπορεί να επηρεάσει την επικοινωνία μεταξύ εγκεφάλου και σώματος, οδηγώντας σε διαφορετικά συμπτώματα και διαφορετική πορεία από άνθρωπο σε άνθρωπο.
+            </p>
+            <div class="education-note">
+              Η σωστή ενημέρωση βοηθά στην καλύτερη κατανόηση της νόσου και στη μείωση του φόβου και της παραπληροφόρησης.
+            </div>
+          </div>
+
+          <div id="edu-panel-2" class="education-panel" role="tabpanel" aria-labelledby="edu-tab-2">
+            <h3>Συμπτώματα & Διάγνωση</h3>
+            <p>
+              Τα συμπτώματα της ΣΚΠ διαφέρουν σημαντικά. Μπορεί να περιλαμβάνουν κόπωση, διαταραχές στην όραση, μούδιασμα, αδυναμία, δυσκολίες στην ισορροπία ή στην κίνηση.
+            </p>
+            <p>
+              Η διάγνωση γίνεται από εξειδικευμένο νευρολόγο και συνήθως βασίζεται σε κλινική εκτίμηση, μαγνητική τομογραφία και άλλες εξετάσεις, όπου χρειάζεται.
+            </p>
+            <div class="education-note">
+              Η έγκαιρη αξιολόγηση από ειδικό είναι καθοριστική για την ορθή διαχείριση της νόσου.
+            </div>
+          </div>
+
+          <div id="edu-panel-3" class="education-panel" role="tabpanel" aria-labelledby="edu-tab-3">
+            <h3>Θεραπευτική προσέγγιση</h3>
+            <p>
+              Η αντιμετώπιση της ΣΚΠ περιλαμβάνει θεραπευτικές επιλογές που στοχεύουν στη μείωση της δραστηριότητας της νόσου, στην αντιμετώπιση των υποτροπών και στη διαχείριση των συμπτωμάτων.
+            </p>
+            <p>
+              Η θεραπευτική στρατηγική εξατομικεύεται και διαμορφώνεται πάντα σε συνεργασία με τον θεράποντα ιατρό, σύμφωνα με τις ανάγκες και την πορεία κάθε ανθρώπου.
+            </p>
+            <div class="education-note">
+              Η εξατομικευμένη φροντίδα και η σταθερή ιατρική παρακολούθηση έχουν ουσιαστικό ρόλο στην ποιότητα ζωής.
+            </div>
+          </div>
+
+          <div id="edu-panel-4" class="education-panel" role="tabpanel" aria-labelledby="edu-tab-4">
+            <h3>Καθημερινότητα & Υποστήριξη</h3>
+            <p>
+              Η ζωή με ΣΚΠ επηρεάζεται από πολλούς παράγοντες: τη σωματική κατάσταση, την ψυχολογία, την εργασία, τις σχέσεις και την πρόσβαση στην κατάλληλη φροντίδα.
+            </p>
+            <p>
+              Η ενημέρωση, η υποστήριξη από την κοινότητα, η διεπιστημονική φροντίδα και η κατανόηση από το περιβάλλον μπορούν να βελτιώσουν ουσιαστικά την καθημερινότητα.
+            </p>
+            <div class="education-note">
+              Κανείς δεν χρειάζεται να πορεύεται μόνος — η γνώση και η συλλογική στήριξη κάνουν διαφορά.
             </div>
           </div>
         </div>
@@ -951,8 +1202,7 @@
       </div>
     </section>
 
-
- <section class="section" id="news">
+    <section class="section" id="news">
       <div class="container panel story reveal">
         <img src="assets/images/news.jpg" alt="Εικόνα για ενότητα νέων ή δράσεων" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
         <div class="story-placeholder" style="display:none;">
@@ -978,54 +1228,53 @@
     </section>
 
     <section class="section" id="contact">
-  <div class="container">
-    <div class="eyebrow reveal">Επικοινωνία</div>
-    <h2 class="reveal contact-title">Είμαστε εδώ για να ακούσουμε και να συνεργαστούμε.</h2>
-    <p class="section-text reveal">
-      Είμαστε εδώ για να ακούσουμε, να ενημερώσουμε και να συμπράξουμε με κάθε ενδιαφερόμενο για τη βελτίωση της ζωής των ατόμων με ΣΚΠ.
-    </p>
+      <div class="container">
+        <div class="eyebrow reveal">Επικοινωνία</div>
+        <h2 class="reveal contact-title">Είμαστε εδώ για να ακούσουμε και να συνεργαστούμε.</h2>
+        <p class="section-text reveal">
+          Είμαστε εδώ για να ακούσουμε, να ενημερώσουμε και να συμπράξουμε με κάθε ενδιαφερόμενο για τη βελτίωση της ζωής των ατόμων με ΣΚΠ.
+        </p>
 
-    <div class="cards">
-      <article class="card reveal">
-        <span class="card-index">01</span>
-        <h3>Τηλέφωνο</h3>
-        <p><a href="tel:+302101234567">+30 210 1234567</a></p>
-      </article>
+        <div class="cards">
+          <article class="card reveal">
+            <span class="card-index">01</span>
+            <h3>Τηλέφωνο</h3>
+            <p><a href="tel:+302101234567">+30 210 1234567</a></p>
+          </article>
 
-      <article class="card reveal">
-        <span class="card-index">02</span>
-        <h3>Email</h3>
-        <p><a href="mailto:info@poamskp.gr">info@poamskp.gr</a></p>
-      </article>
+          <article class="card reveal">
+            <span class="card-index">02</span>
+            <h3>Email</h3>
+            <p><a href="mailto:info@poamskp.gr">info@poamskp.gr</a></p>
+          </article>
 
-      <article class="card reveal">
-        <span class="card-index">03</span>
-        <h3>Ψηφιακό Γραφείο</h3>
-        <p>Για προγραμματισμένες συναντήσεις, συνδεθείτε στο δωμάτιο Google Meet.</p>
-        <div class="btn-group" style="margin-top: 18px;">
-          <a href="https://meet.google.com/zsk-rnhd-bck" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-            Είσοδος στο Meet
-          </a>
+          <article class="card reveal">
+            <span class="card-index">03</span>
+            <h3>Ψηφιακό Γραφείο</h3>
+            <p>Για προγραμματισμένες συναντήσεις, συνδεθείτε στο δωμάτιο Google Meet.</p>
+            <div class="btn-group" style="margin-top: 18px;">
+              <a href="https://meet.google.com/zsk-rnhd-bck" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                Είσοδος στο Meet
+              </a>
+            </div>
+          </article>
         </div>
-      </article>
-    </div>
-  </div>
-</section>
+      </div>
+    </section>
 
-<section class="section" id="collaboration" style="padding-top: 0;">
-  <div class="container panel cta reveal">
-    <div class="eyebrow" style="justify-content:center; width:100%;">Συνεργασίες • Δράση • Στήριξη</div>
-    <h2>Ανοιχτοί σε συνεργασίες με κοινό κοινωνικό σκοπό.</h2>
-    <p>
-      Η ΠΟΑμΣΚΠ επιδιώκει συνεργασίες με φορείς, οργανισμούς, επαγγελματίες υγείας, συλλόγους και πρωτοβουλίες που μοιράζονται το ίδιο όραμα για ενημέρωση, στήριξη και βελτίωση της ζωής των ατόμων με ΣΚΠ.
-    </p>
-    <div class="btn-group" style="justify-content:center;">
-      <a href="mailto:info@poamskp.gr?subject=Συνεργασία" class="btn btn-primary">Εκδήλωση ενδιαφέροντος</a>
-      <a href="#contact" class="btn btn-secondary">Στοιχεία επικοινωνίας</a>
-    </div>
-  </div>
-</section>
-    
+    <section class="section" id="collaboration" style="padding-top: 0;">
+      <div class="container panel cta reveal">
+        <div class="eyebrow" style="justify-content:center; width:100%;">Συνεργασίες • Δράση • Στήριξη</div>
+        <h2>Ανοιχτοί σε συνεργασίες με κοινό κοινωνικό σκοπό.</h2>
+        <p>
+          Η ΠΟΑμΣΚΠ επιδιώκει συνεργασίες με φορείς, οργανισμούς, επαγγελματίες υγείας, συλλόγους και πρωτοβουλίες που μοιράζονται το ίδιο όραμα για ενημέρωση, στήριξη και βελτίωση της ζωής των ατόμων με ΣΚΠ.
+        </p>
+        <div class="btn-group" style="justify-content:center;">
+          <a href="mailto:info@poamskp.gr?subject=Συνεργασία" class="btn btn-primary">Εκδήλωση ενδιαφέροντος</a>
+          <a href="#contact" class="btn btn-secondary">Στοιχεία επικοινωνίας</a>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer>
@@ -1085,6 +1334,21 @@
         } else {
           link.classList.remove("active");
         }
+      });
+    }
+
+    function switchEducationTab(tabNumber) {
+      const tabs = document.querySelectorAll(".education-tab");
+      const panels = document.querySelectorAll(".education-panel");
+
+      tabs.forEach((tab, index) => {
+        const isActive = index === tabNumber - 1;
+        tab.classList.toggle("active", isActive);
+        tab.setAttribute("aria-selected", String(isActive));
+      });
+
+      panels.forEach((panel, index) => {
+        panel.classList.toggle("active", index === tabNumber - 1);
       });
     }
 
