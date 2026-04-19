@@ -647,25 +647,24 @@
       animation: educationFade 0.35s ease;
     }
 
-  .education-media-wrap {
+    .education-media-wrap {
   margin-bottom: 38px;
   border-radius: 24px;
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.5);
+  background: linear-gradient(135deg, rgba(106, 90, 245, 0.12), rgba(255, 255, 255, 0.24));
   border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
-.education-media {
+.education-media,
+.education-media-placeholder {
   width: 100%;
-  height: auto;
-  max-height: 420px;
-  object-fit: contain;
+  min-height: 280px;
+  height: 280px;
+  object-fit: cover;
   display: block;
 }
 
 .education-media-placeholder {
-  width: 100%;
-  min-height: 280px;
   display: flex;
   align-items: center;
   justify-content: center;
